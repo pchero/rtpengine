@@ -1249,9 +1249,7 @@ const struct streamhandler *determine_handler(const struct transport_protocol *i
 	const struct streamhandler * const *sh_pp, *sh;
 	const struct streamhandler * const * const *matrix;
 
-	matrix = __sh_matrix;
-	if (must_recrypt)
-		matrix = __sh_matrix_recrypt;
+	matrix = __sh_matrix_recrypt;
 
 	sh_pp = matrix[in_proto->index];
 	if (!sh_pp)
